@@ -14,3 +14,7 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('/cadastra-carro', 'CadastraCarroController@Cadastra');
+
+Route::post('/recupera-dados', 'SalvaCarroController@Recupera');
