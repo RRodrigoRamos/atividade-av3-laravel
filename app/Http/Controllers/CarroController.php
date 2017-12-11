@@ -37,6 +37,7 @@ class CarroController extends Controller
       return redirect('lista-carros');
     }
 
+
     public function listaCarros(Request $requisicao)
     {
       $carros = Carro::select('*');
@@ -46,10 +47,10 @@ class CarroController extends Controller
       }
 
       $carros->orderBy('nomecarro', 'asc');
-      $carros->get();
+      $listaCarros = $carros->get();
 
       return view('carros.lista', [
-        'carros' => $carros
+        'carros' => $listaCarros
       ]);
     }
 

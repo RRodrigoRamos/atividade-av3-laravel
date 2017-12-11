@@ -1,7 +1,7 @@
 @extends('template')
 
 @section('conteudo')
-
+{{dd($$listaCarros)}}
 <h2>Lista de Carros Cadastrados ! <i class="fa fa-car" aria-hidden="true"></i> </h2>
 
  <div class="panel">
