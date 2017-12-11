@@ -15,7 +15,7 @@ class CreateCarrosTable extends Migration
     {
         Schema::create('carros', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('numbcarro');
+            $table->integer('numbcarro')->unique();
             $table->string('marca');
             $table->string('nomecarro');
             $table->string('proprietario');
