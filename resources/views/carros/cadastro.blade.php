@@ -1,5 +1,4 @@
 @extends('template')
-
 @section('conteudo')
 
   <form method="POST" action="/cadastrar-carro">

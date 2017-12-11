@@ -22,6 +22,7 @@ class CarroController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+
     public function cadastraCarros(Request $requisicao)
     {
       Carro::create([
@@ -36,15 +37,19 @@ class CarroController extends Controller
       return redirect('lista-carros');
     }
 
-    public function listaCarros()
+    public function listaCarros(Request $requisicao)
     {
       $carros = Carro::select('*');
-      $carros->orderBy('modelo', 'asc');
 
-      $listaCarros = $carros->get();
+      if($requisicao->has('pesquisa')) {
+        $carros->where('nomecarro', 'like', '%' . $requisicao->get('pesquisa') . '%');
+      }
+
+      $carros->orderBy('nomecarro', 'asc');
+      $carros->get();
 
       return view('carros.lista', [
-        'carros' => $listaCarros
+        'carros' => $carros
       ]);
     }
 

@@ -16,11 +16,9 @@
 // });
 
 
-// Home dos Carros
-Route::get('/', 'CarroController@index');
-
-Route::get('/lista-carros', 'CarroController@index');
-Route::post('/cadastrar-carro', 'CarroController@cadastraCarros');
-Route::put('/alterar-carro/{id}', 'CadastraCarroController@Cadastra');
-Route::delete('excluir-carro/{id}', 'CadastraCarroController@Cadastra');
-Route::get('/recupera-dados', 'SalvaCarroController@Recupera');
+Route::get('/', 'CarroController@listaCarros');
+Route::get('/lista-carros', 'CarroController@listaCarros');
+Route::post('/cadastra-carro', 'CarroController@cadastraCarros');
+Route::put('/alterar-carro', 'CarroController@Cadastra');
+Route::delete('excluir-carro/{id}', 'CarroController@excluirCarro');
+Route::get('/detalhe-carro', 'CarroController@detalhe');
