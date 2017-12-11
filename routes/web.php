@@ -10,11 +10,17 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
+//
+// Route::get('/', function () {
+//     return view('welcome');
+// });
 
-Route::get('/', function () {
-    return view('welcome');
-});
 
-Route::get('/cadastra-carro', 'CadastraCarroController@Cadastra');
+// Home dos Carros
+Route::get('/', 'CarroController@index');
 
-Route::post('/recupera-dados', 'SalvaCarroController@Recupera');
+Route::get('/lista-carros', 'CarroController@index');
+Route::post('/cadastrar-carro', 'CarroController@cadastraCarros');
+Route::put('/alterar-carro/{id}', 'CadastraCarroController@Cadastra');
+Route::delete('excluir-carro/{id}', 'CadastraCarroController@Cadastra');
+Route::get('/recupera-dados', 'SalvaCarroController@Recupera');

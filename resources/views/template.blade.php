@@ -6,6 +6,7 @@
 </head>
 <body>
 <div class="conteudo">
+  Ção
     @section('conteudo')
 
     @show
