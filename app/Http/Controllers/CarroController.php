@@ -36,7 +36,7 @@ class CarroController extends Controller
         'cor' => $requisicao->get('cor'),
         'fabricacao' => $requisicao->get('fabricacao'),
       ]);
-      return redirect('lista-carros');
+      return redirect('listar-carros');
     }
 
 

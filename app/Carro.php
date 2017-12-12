@@ -2,10 +2,9 @@
 
 namespace App;
 
-use Illuminate\Database\Eloquent\Model;
-use Illuminate\Database\Eloquent;
+use Illuminate\Database\Eloquent\Model;;
 
-class Carro extends Eloquent
+class Carro extends Model
 {
 
       /**
