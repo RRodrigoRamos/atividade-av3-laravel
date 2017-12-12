@@ -3,7 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Carro;
+use App\Http\Requests;
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
 
 class CarroController extends Controller
 {
@@ -44,13 +46,14 @@ class CarroController extends Controller
 
       if($requisicao->has('pesquisa')) {
         $carros->where('nomecarro', 'like', '%' . $requisicao->get('pesquisa') . '%');
+        $carros->Orwhere('nplaca', 'like', '%' . $requisicao->get('pesquisa') . '%');
       }
 
       $carros->orderBy('nomecarro', 'asc');
       $listaCarros = $carros->get();
 
       return view('carros.lista', [
-        'carros' => $listaCarros
+        'carros' => $listaCarros,
       ]);
     }
 

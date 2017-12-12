@@ -36,6 +36,28 @@ header {
 
 }
 
+div form#pesquisa a{
+  margin-left:30% !important;
+}
+
+form#cadastro {
+  margin: 10px auto !important;
+  width:80% !important;
+}
+
+form#cadastro .form-group {
+  margin: 10px auto !important;
+}
+
+form#cadastro .btn {
+  margin: 10px auto !important;
+}
+
+table tbody tr:nth-child(2n+1) {
+
+background:lightgray;
+
+}
 
   article {
     margin:10px auto !important;
@@ -45,7 +67,7 @@ header {
     box-shadow: 1px 10px 20px rgba(0, 28, 31, 0.33);
     position: relative;
      border-radius:0px 0px 10px 10px;
-     text-align: center;
+     /*text-align: center;*/
   }
 
   footer {

@@ -15,13 +15,13 @@ class CreateCarrosTable extends Migration
     {
         Schema::create('carros', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('numbcarro')->unique();
+            $table->string('numbcarro')->unique();
             $table->string('marca');
             $table->string('nomecarro');
             $table->string('proprietario');
             $table->string('nplaca')->unique();
             $table->string('cor');
-            $table->string('fabricacao');
+            $table->integer('fabricacao');
             $table->timestamps();
         });
     }
