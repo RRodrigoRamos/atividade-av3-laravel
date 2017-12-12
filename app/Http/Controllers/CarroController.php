@@ -57,7 +57,37 @@ class CarroController extends Controller
       ]);
     }
 
+    public function alteraCarro($id)
+    {
+      $carros = Carro::find($id);
+      $carros->update([
+        'numbcarro' => $requisicao->get('numbcarro'),
+        'marca' => $requisicao->get('marca'),
+        'nomecarro' => $requisicao->get('nomecarro'),
+        'proprietario' => $requisicao->get('proprietario'),
+        'nplaca' => $requisicao->get('nplaca'),
+        'cor' => $requisicao->get('cor'),
+        'fabricacao' => $requisicao->get('fabricacao')
+      ]);
 
+      return redirect('listar-carros');
+    }
+
+
+    public function detalhe($id)
+    {
+      $carros = Carro::select('*');
+      $carros->where('id', '=', $id);
+      return view('carros.detalhe');
+    }
+
+
+    public function excluirCarro($id)
+    {
+      Carro::destroy($id);
+
+      return redirect('listar-carros');
+    }
 
     /**
      * Store a newly created resource in storage.
@@ -65,9 +95,15 @@ class CarroController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(Request $requisicao)
     {
-        //
+        $this->validate($requisicao,[
+          'nplaca' => 'required|max:8',
+          ] , [
+          'nplaca.required' => 'No máximo até 8 numeros',
+
+          // mensagem personalizada de erros
+        ]);
     }
 
     /**
@@ -81,37 +117,4 @@ class CarroController extends Controller
         //
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Carro  $carro
-     * @return \Illuminate\Http\Response
-     */
-    public function edit(Carro $carro)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Carro  $carro
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, Carro $carro)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  \App\Carro  $carro
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy(Carro $carro)
-    {
-        //
-    }
 }

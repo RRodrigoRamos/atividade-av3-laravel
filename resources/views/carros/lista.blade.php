@@ -42,7 +42,7 @@
              <a class="btn btn-outline-primary" href="/detalhar-carro/{{ $carro->id }}">
                <i class="fa fa-search" aria-hidden="true"></i> Detalhe
              </a>
-             <a class="btn btn-outline-secondary" href="/editar-usuario/{{ $carro->id }}">
+             <a class="btn btn-outline-secondary" href="/alterar-carro/{{ $carro->id }}">
                <i class="fa fa-edit"></i> Editar
              </a>
 

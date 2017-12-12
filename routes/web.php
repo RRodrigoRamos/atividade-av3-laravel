@@ -24,6 +24,6 @@ Route::get('/cadastro-carro', function () {
 });
 
 Route::post('/cadastrar-carro', 'CarroController@cadastraCarros');
-Route::put('/alterar-carro', 'CarroController@alteraCarro');
+Route::put('/alterar-carro/{id}', 'CarroController@alteraCarro');
 Route::delete('excluir-carro/{id}', 'CarroController@excluirCarro');
-Route::get('/detalhar-carro', 'CarroController@detalhe');
+Route::get('/detalhar-carro/{id}', 'CarroController@detalhe');
