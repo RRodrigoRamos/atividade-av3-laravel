@@ -13,7 +13,7 @@
          <input type="text" class="form-control" name="pesquisa"/>
        </div>&nbsp;&nbsp;
        <button type="submit">Pesquisar por Carro / Placa <i class="fa fa-car" aria-hidden="true"></i> </button>
-       <a href="/cadastro-carro" class="btn btn-outline-success">
+       <a href="/form-cadastro" class="btn btn-outline-success">
          <i class="fa fa-plus-circle"></i>
          NOVO CADASTRO
          <i class="fa fa-car" aria-hidden="true"></i>
@@ -42,7 +42,7 @@
              <a class="btn btn-outline-primary" href="/detalhar-carro/{{ $carro->id }}">
                <i class="fa fa-search" aria-hidden="true"></i> Detalhe
              </a>
-             <a class="btn btn-outline-secondary" href="/alterar-carro/{{ $carro->id }}">
+             <a class="btn btn-outline-secondary" href="/editar-carro/{{ $carro->id }}">
                <i class="fa fa-edit"></i> Editar
              </a>
 

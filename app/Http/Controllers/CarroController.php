@@ -25,6 +25,11 @@ class CarroController extends Controller
      * @return \Illuminate\Http\Response
      */
 
+     public function formCadastro()
+     {
+       return view('carros.cadastro');
+     }
+
     public function cadastraCarros(Request $requisicao)
     {
       Carro::create([
@@ -57,7 +62,16 @@ class CarroController extends Controller
       ]);
     }
 
-    public function alteraCarro($id)
+    public function editaCarro($id)
+    {
+      $carros = Carro::find($id);
+
+      return view('carros.editar',[
+        'carros' => $carros,
+      ]);
+    }
+
+    public function alteraCarro($id, Request $requisicao)
     {
       $carros = Carro::find($id);
       $carros->update([
@@ -76,9 +90,11 @@ class CarroController extends Controller
 
     public function detalhe($id)
     {
-      $carros = Carro::select('*');
-      $carros->where('id', '=', $id);
-      return view('carros.detalhe');
+      $carros = Carro::find($id);
+
+      return view('carros.detalhe',[
+        'carros' => $carros,
+      ]);
     }
 
 

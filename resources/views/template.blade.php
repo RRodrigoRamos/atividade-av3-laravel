@@ -9,8 +9,8 @@
 		<meta name="keywords" content="Registro cadastro edição !" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
 			<!-- Arquivos e Fontes -->
-    <link rel="icon" href="img/CarLogo.png" type="image/x-icon"/>
-    <link rel="shortcut icon" href="img/CarLogo.png" type="image/x-icon"/>
+    <link rel="icon" href="../img/CarLogo.png" type="image/x-icon"/>
+    <link rel="shortcut icon" href="../img/CarLogo.png" type="image/x-icon"/>
 		<link rel="stylesheet" type="text/css" media="all" href="../css/bootstrap.min.css"/>
 		<link rel="stylesheet" type="text/css" media="screen" href="../css/index.css"/>
   	<link rel="stylesheet" type="text/css" href="../fonts/font-awesome-4.7.0/css/font-awesome.min.css"/>

@@ -49,4 +49,4 @@
     </a>
 
   </form>
-@stop
+@endsection

@@ -18,12 +18,10 @@
 
 Route::get('/', 'CarroController@listaCarros');
 Route::get('/listar-carros', 'CarroController@listaCarros');
-
-Route::get('/cadastro-carro', function () {
-   return view('carros.cadastro');
-});
+Route::get('/form-cadastro', 'CarroController@formCadastro');
+Route::get('/detalhar-carro/{id}', 'CarroController@detalhe');
 
 Route::post('/cadastrar-carro', 'CarroController@cadastraCarros');
 Route::put('/alterar-carro/{id}', 'CarroController@alteraCarro');
+Route::get('/editar-carro/{id}', 'CarroController@editaCarro');
 Route::delete('excluir-carro/{id}', 'CarroController@excluirCarro');
-Route::get('/detalhar-carro/{id}', 'CarroController@detalhe');
